@@ -5,10 +5,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather App</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+    <div class="container">
+        <h1 class="weather-app_title">Weather App</h1>
 
+        <div class="weather-app_container">
+            <div class="weather-app_container--search">
+                <h3>Choose from a list of cities or search for a city</h3>
+                <select name="" id="">
+                    <option value="London">London - 🇬🇧</option>
+                    <option value="Paris">Paris - 🇫🇷</option>
+                    <option value="Madrid">Madrid - 🇪🇸</option>
+                    <option value="Barcelona">Barcelona - 🇪🇸</option>
+                    <option value="Rome">Rome - 🇮🇹</option>
+                    <option value="Brussels">Brussels - 🇧🇪</option>
+                    <option value="Lisbon">Lisbon - 🇵🇹</option>
+                    <option value="Bern">Bern - 🇨🇭</option>
+                    <option value="Berlin">Berlin - 🇩🇪</option>
+                    <option value="Amsterdam">Amsterdam - 🇳🇱</option>
+                </select>
+                <input type="text" name="" placeholder="Search for a city" id="">
+                <input type="submit" value="Submit">
+
+            </div>
+            <div class="weather-app_container--display">
+                <h4>City: <span class="cityName"></span></h4>
+                <h4>City Weather Description: <span class="cityWeatherDescription"></span></h4>
+                <h4>City Weather Temperature: <span class="cityWeatherTemperature"></span></h4>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="index.js"></script>
 </body>
 
 </html>
