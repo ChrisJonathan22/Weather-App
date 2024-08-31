@@ -14,9 +14,49 @@ body {
 }
 
 .weather-app_container {
+    position: relative;
     background-color: white;
     margin: 0 auto;
     width: 400px;
     height: 400px;
-    padding: 20px;
+    padding: 2em;
+    border-radius: 10px;
+}
+
+/* Experimental feature */
+@property --angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+.weather-app_container::before, .weather-app_container::after{
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: conic-gradient(from var(--angle), transparent 50%,red, yellow, green, orange, pink, blue, red);
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: -1;
+    padding: 10px;
+    border-radius: 10px;
+    animation: 3s spin linear infinite;
+}
+
+.weather-app_container::before {
+    filter: blur(1.5rem);
+    opacity: 0.5;
+}
+
+/* Spin animation for the colourful border */
+@keyframes spin {
+    from {
+        --angle: 0deg;
+    }
+
+    to {
+        --angle: 360deg;
+    }
 }
