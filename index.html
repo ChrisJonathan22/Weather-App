@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather App</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/fomantic-ui/2.9.3/semantic.min.css">
 </head>
 
 <body>
@@ -27,8 +29,27 @@
                     <option value="Berlin">Berlin - 🇩🇪</option>
                     <option value="Amsterdam">Amsterdam - 🇳🇱</option>
                 </select>
+
+                <div class="ui fluid search selection dropdown">
+                    <input type="hidden" name="city">
+                    <i class="dropdown icon"></i>
+                    <div class="default text">Select a City</div>
+                    <div class="menu">
+                        <div class="item" data-value="fr"><i class="fr flag"></i>Paris</div>
+                        <div class="item"></div>
+                        <div class="item"></div>
+                        <div class="item"></div>
+                        <div class="item"></div>
+                        <div class="item"></div>
+                        <div class="item"></div>
+                        <div class="item"></div>
+                        <div class="item"></div>
+                        <div class="item"></div>
+                    </div>
+                </div>
+
                 <input type="text" name="" placeholder="Search for a city" id="">
-                <input type="submit" value="Submit">
+                <input type="submit" class="ui primary button" value="Submit">
 
             </div>
             <div class="weather-app_container--display">
@@ -39,6 +60,9 @@
         </div>
     </div>
     <script type="module" src="index.js"></script>
+    <!-- You MUST include jQuery 3.4+ before Fomantic -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fomantic-ui/2.9.3/semantic.min.js"></script>
 </body>
 
 </html>
