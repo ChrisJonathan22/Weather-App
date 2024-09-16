@@ -54,3 +54,18 @@ cityDropdown.addEventListener("change", (e) => {
     let selectedCity = e.target.value;
     getCityLatAndLon(selectedCity);
 });
+
+
+$(document).ready(function() {
+    $('.ui.dropdown').dropdown();
+  });
+
+// $('.stuck.example .ui.dropdown')
+//   .dropdown({
+//     allowAdditions: true,
+//     hideAdditions: false,
+//     className: {
+//       addition: 'stuck addition'
+//     }
+//   })
+// ;
