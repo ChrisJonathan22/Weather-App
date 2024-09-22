@@ -16,18 +16,6 @@
         <div class="weather-app_container">
             <div class="weather-app_container--search">
                 <h3>Choose from a list of cities or search for a city</h3>
-                <select name="" id="cityDropdown">
-                    <option value="London" selected>London - 🇬🇧</option>
-                    <option value="Paris">Paris - 🇫🇷</option>
-                    <option value="Madrid">Madrid - 🇪🇸</option>
-                    <option value="Barcelona">Barcelona - 🇪🇸</option>
-                    <option value="Rome">Rome - 🇮🇹</option>
-                    <option value="Brussels">Brussels - 🇧🇪</option>
-                    <option value="Lisbon">Lisbon - 🇵🇹</option>
-                    <option value="Bern">Bern - 🇨🇭</option>
-                    <option value="Berlin">Berlin - 🇩🇪</option>
-                    <option value="Amsterdam">Amsterdam - 🇳🇱</option>
-                </select>
 
                 <div class="ui fluid selection dropdown">
                     <input type="hidden" name="city">
@@ -47,7 +35,11 @@
                     </div>
                 </div>
 
-                <input type="text" name="" placeholder="Search for a city" id="">
+                <div class="ui search">
+                    <input class="prompt" type="text" placeholder="Type a city name...">
+                    <div class="results"></div>
+                </div>
+
                 <input type="submit" class="ui primary button" value="Submit">
 
             </div>

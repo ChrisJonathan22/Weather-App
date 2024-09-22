@@ -1,7 +1,7 @@
 import apiKey from "./apiKey.js";
 
 let cityWeatherInfo = {};
-let cityDropdown = document.querySelector("#cityDropdown");
+// let cityDropdown = document.querySelector("#cityDropdown");
 
 const cityEl = document.querySelector(".cityName");
 const cityWeatherDescEl = document.querySelector(".cityWeatherDescription");
@@ -48,17 +48,22 @@ async function getCityWeatherData (lat, lon, city) {
     }
 }
 
-getCityLatAndLon("London");
 
-cityDropdown.addEventListener("change", (e) => {
+$(document).ready(function() {
+    // Initialise dropdown
+    $('.ui.dropdown').dropdown();
+
+    // On application load simulate a click on the first item on the list which is London
+    $('.item')[0].click();
+  });
+
+
+// Setup an event listener to fetch the selected city's weather data
+$('.ui.dropdown').change((e) => {
     let selectedCity = e.target.value;
     getCityLatAndLon(selectedCity);
 });
 
-
-$(document).ready(function() {
-    $('.ui.dropdown').dropdown();
-  });
 
 // $('.stuck.example .ui.dropdown')
 //   .dropdown({
