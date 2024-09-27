@@ -50,6 +50,15 @@ body {
     opacity: 0.5;
 }
 
+.weather-app_container .search .emptySearchError, .weather-app_container .search .cityNotFoundError {
+    color: red;
+    display: none;
+}
+
+.weather-app_container .search .emptySearchError.show, .weather-app_container .search .cityNotFoundError.show {
+    display: block;
+}
+
 /* Spin animation for the colourful border */
 @keyframes spin {
     from {

@@ -1,6 +1,9 @@
 import apiKey from "./apiKey.js";
 
 let cityWeatherInfo = {};
+let searchKeyword;
+let errorMessage = $('.search .emptySearchError');
+let cityNotFoundErrorMessage = $('.search .cityNotFoundError');
 // let cityDropdown = document.querySelector("#cityDropdown");
 
 const cityEl = document.querySelector(".cityName");
@@ -19,6 +22,8 @@ async function getCityLatAndLon (city="London") {
         getCityWeatherData(cityLat, cityLon, city);
     }
     catch (error) {
+        // Show error if there's no match for the city queried
+        cityNotFoundErrorMessage.addClass('show');
         console.log("There was an error.", error.message);
     }
 }
@@ -62,6 +67,20 @@ $(document).ready(function() {
 $('.ui.dropdown').change((e) => {
     let selectedCity = e.target.value;
     getCityLatAndLon(selectedCity);
+});
+
+$('.ui.button').click((e) => {
+    // Capture the content of the search box
+    searchKeyword = $('.search .prompt')[0].value;
+
+    // Check if the search box is empty
+    if (searchKeyword.length === 0) {
+        // Show error if the search box is empty
+        errorMessage.addClass('show');
+        return;
+    }
+    
+    getCityLatAndLon(searchKeyword);
 });
 
 
