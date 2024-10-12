@@ -59,6 +59,16 @@ body {
     display: block;
 }
 
+.weather-app_container .weather-app_container--display .cityWeatherIcon {
+    display: none;
+    height: 70px;
+    width: 70px;
+}
+
+.weather-app_container .weather-app_container--display .cityWeatherIcon.show {
+    display: block;
+}
+
 /* Spin animation for the colourful border */
 @keyframes spin {
     from {

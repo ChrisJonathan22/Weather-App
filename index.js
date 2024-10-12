@@ -6,9 +6,10 @@ let errorMessage = $('.search .emptySearchError');
 let cityNotFoundErrorMessage = $('.search .cityNotFoundError');
 // let cityDropdown = document.querySelector("#cityDropdown");
 
-const cityEl = document.querySelector(".cityName");
-const cityWeatherDescEl = document.querySelector(".cityWeatherDescription");
-const cityTemperatureEl = document.querySelector(".cityWeatherTemperature");
+const cityEl = $('.cityName');
+const cityWeatherDescEl = $('.cityWeatherDescription');
+const cityTemperatureEl = $('.cityWeatherTemperature');
+const cityWeatherIconEl = $('.cityWeatherIcon');
 
 // Function to get city latitude and longitude
 async function getCityLatAndLon (city="London") {
@@ -44,9 +45,11 @@ async function getCityWeatherData (lat, lon, city) {
     
         
         // Display the data on the frontend
-        cityEl.innerHTML = cityWeatherInfo.city;
-        cityWeatherDescEl.innerHTML = cityWeatherInfo.description;
-        cityTemperatureEl.innerHTML = cityWeatherInfo.temp;
+        cityEl.html(cityWeatherInfo.city);
+        cityWeatherDescEl.html(cityWeatherInfo.description);
+        cityTemperatureEl.html(cityWeatherInfo.temp);
+        cityWeatherIconEl.attr('src', `https://openweathermap.org/img/w/${cityWeatherInfo.icon}.png`);
+        cityWeatherIconEl.addClass('show');
     }
     catch (error) {
         console.log("There was an error.", error.message);
@@ -60,7 +63,7 @@ $(document).ready(function() {
 
     // On application load simulate a click on the first item on the list which is London
     $('.item')[0].click();
-  });
+});
 
 
 // Setup an event listener to fetch the selected city's weather data
